@@ -1,0 +1,51 @@
+/* Override Defaults */
+* {margin: 0;}
+
+/* Footer and Header */
+.footer-nav-link {text-decoration: none; padding: 0 10px; color: #000;}
+.footer-nav-link:hover {color: #849c47;}
+#header {border-bottom: 3px solid #849c47; padding: 10px 0;}
+#footer {border-top: 3px solid #849c47; padding: 10px 0; text-align:center;}
+
+/* General */
+#body {}
+.center-me {text-align:center;}
+
+/* Column Settings */
+.six-columns {width:100%; display:inline-block; vertical-align:top;}
+
+/* Home Page CSS */
+.splash-portrait {width:100%; height:auto;}
+.splash-logo {width:40%; height:auto; padding:20px;}
+.splash-text {text-align:center; padding: 20px;}
+.main-title {margin-bottom: 10px;}
+.main-text {margin-bottom: 10px;}
+.splash-buttons {text-align:center; margin-bottom: 40px;}
+.green-button {border: 2px solid #849c47; color: #849c47; background-color: white; font-size:1.3em; padding:5px 10px; margin: 0 10px; text-decoration:none;}
+.green-button:hover {background-color: #849c47; color:white;}
+
+/* Portfolio Page CSS */
+.portfolio-item {padding:40px 0; border-top: 2px solid #849c47;}
+.portfolio-pic {width:75%; height:auto; margin:0 auto; display:block;}
+.portfolio-text-div {margin-top:20px;}
+.portfolio-title {padding: 0 20px 10px 20px;}
+.portfolio-text {padding: 0 20px;}
+
+/* Contact Page CSS */
+.contact-input {display:block; width:100%; height:30px; margin-top:8px;}
+.input-container {margin:25px auto; width:75%; }
+
+/* Blog Page CSS */
+.blog-title{margin:20px 0; text-align:center; color:#849c47;}
+.all-posts{margin:0 40px;}
+.post-container{margin: 20px 0;}
+.post-title{padding:10px 0;}
+.post-date{}
+.post-content{padding:10px 0;}
+
+/* 768px and up */
+@media (min-width: 768px) {
+	.six-columns {width:50%; display:inline-block; vertical-align:top;}
+	.portfolio-text-div {margin-top:0px;}
+
+}

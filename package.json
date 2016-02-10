@@ -1,0 +1,15 @@
+{
+  "name": "abbie-portfolio-site",
+  "version": "1.0.0",
+  "description": "The personal portfolio of Abbie Marks and business site of On the Mark PR",
+  "main": "public/js/app.js",
+  "scripts": {
+    "test": "Whoop"
+  },
+  "author": "jm8",
+  "license": "ISC",
+  "engines": {
+    "node": "4.2.x",
+    "npm": "2.x"
+  }
+}

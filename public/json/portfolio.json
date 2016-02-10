@@ -1,0 +1,29 @@
+module.exports = {
+	"portfolio": [
+		{
+			"title": "NoCo Hemp Expo 2016 P.R Campaign",
+			"description": "Working in collaboration with Colorado Hemp Company and the NoCo3 Team on all Press and P.R related matters, I designed the P.R timeline for this year's campaign and produce the content needed for maximum attendance and media coverage.",
+			"pic": "/images/noco_hemp_expo.png"
+		},
+		{
+			"title": "E-book for American Gut Project Film Series Redefining Human",
+			"description": "Befriending Your Invisible Bacterial Organ is an e-book on the human micro biome that sheds light on these obscure microorganisms and the microbial scientists who are discovering some of the most ground-breaking technological advances in medicine.",
+			"pic": "/images/redefining-human.jpg"
+		},
+		{
+			"title": "Colorado Hemp Project - Blogs and Articles",
+			"description": "I work with companies like Colorado Hemp Project to publish compelling and educational features on the emerging hemp industry and the individuals who are making it happen today.",
+			"pic": "/images/co_hemp_project.jpg"
+		},
+		{
+			"title": "GoodSeed Veggie Burger - Interviews and Profiles",
+			"description": "I have written interviews and profiles for companies like Hempitecture and GoodSeed whose sustainability-based businesses have rapidly grown over the years. Other interviews include Colorado seed breeder, scientist, and Founder of Centennial Seeds Ben Holmes (who currently sits on the Colorado Department of Agriculture's Hemp Advisory Committee).",
+			"pic": "/images/eat_hemp.jpg"
+		},
+		{
+			"title": "National Hemp Association - Contributing Writer",
+			"description": "As a Guest Writer at National Hemp Association, I present compelling facts in the form of short blogs and articles about local and national trends in the hemp industry. ",
+			"pic": "/images/nha.jpg"
+		}
+	]
+}

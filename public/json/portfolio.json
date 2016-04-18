@@ -2,28 +2,33 @@ module.exports = {
 	"portfolio": [
 		{
 			"title": "NoCo Hemp Expo 2016 P.R Campaign",
-			"description": "Working in collaboration with Colorado Hemp Company and the NoCo3 Team on all Press and P.R related matters, I designed the P.R timeline for this year's campaign and produce the content needed for maximum attendance and media coverage.",
-			"pic": "/images/noco_hemp_expo.png"
+			"description": "Abbie has recently taken the role as publicist for the Third Annual NoCo Hemp Expo 2016. Working in collaboration with Colorado Hemp Company and the NoCo3 Team on all Press and P.R related matters, Abbie designed the P.R timeline for this year's campaign and produced the content needed for maximum attendance and media coverage.",
+			"pic": "/images/noco_hemp_expo.png",
+			"link":"http://nocohempexpo.com"
 		},
 		{
 			"title": "E-book for American Gut Project Film Series Redefining Human",
 			"description": "Befriending Your Invisible Bacterial Organ is an e-book on the human micro biome that sheds light on these obscure microorganisms and the microbial scientists who are discovering some of the most ground-breaking technological advances in medicine.",
-			"pic": "/images/redefining-human.jpg"
+			"pic": "/images/redefining-human.jpg",
+			"link":"http://www.redefininghuman.com"
 		},
 		{
-			"title": "Colorado Hemp Project - Blogs and Articles",
-			"description": "I work with companies like Colorado Hemp Project to publish compelling and educational features on the emerging hemp industry and the individuals who are making it happen today.",
-			"pic": "/images/co_hemp_project.jpg"
+			"title": "Blogs and Articles",
+			"description": "Abbie works with companies like Colorado Hemp Project to publish compelling and educational features on the emerging hemp industry and the individuals who are making it happen today. As a Guest Writer at National Hemp Association, Abbie presents compelling facts in the form of short blogs and articles about local and national trends in the hemp industry.",
+			"pic": "/images/co_hemp_project.jpg",
+			"link":"http://www.coloradohempproject.com"
 		},
 		{
-			"title": "GoodSeed Veggie Burger - Interviews and Profiles",
-			"description": "I have written interviews and profiles for companies like Hempitecture and GoodSeed whose sustainability-based businesses have rapidly grown over the years. Other interviews include Colorado seed breeder, scientist, and Founder of Centennial Seeds Ben Holmes (who currently sits on the Colorado Department of Agriculture's Hemp Advisory Committee).",
-			"pic": "/images/eat_hemp.jpg"
+			"title": "ALOC Media",
+			"description": "As a contributing writer, Abbie's 'Progression' pieces bring light to a memorable time in politics when the law of man once required a return to nature. As a poet herself, she is interested in the socio-emotional and idealistic spectrum of life often conceptualized and portrayed in Ralph Waldo Emerson's essays and poetry.",
+			"pic": "/images/aloc.jpg",
+			"link":"https://alocmedia.com/"
 		},
 		{
-			"title": "National Hemp Association - Contributing Writer",
-			"description": "As a Guest Writer at National Hemp Association, I present compelling facts in the form of short blogs and articles about local and national trends in the hemp industry. ",
-			"pic": "/images/nha.jpg"
+			"title": "Interviews and Profiles",
+			"description": "Abbie has written interviews and profiles on companies like Hempitecture, GoodSeed, and Pure Hemp Technology whose sustainability-based businesses have rapidly grown over the years.",
+			"pic": "/images/eat_hemp.png",
+			"link":"http://goodseedburger.com"
 		}
 	]
 }

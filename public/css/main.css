@@ -1,21 +1,37 @@
 /* Override Defaults */
 * {margin: 0;}
+h1, h2, h3, h4, h5, h6 {font-family: 'Fresca', sans-serif; color:#444444}
+p, a, span, div {font-family: 'Roboto', sans-serif; color:#444444}
+
+a {text-decoration: none;}
 
 /* Footer and Header */
-.footer-nav-link {text-decoration: none; padding: 0 10px; color: #000;}
+.footer-nav-link {text-decoration: none; padding: 0 10px; color: #000; font-size:1.2em;}
 .footer-nav-link:hover {color: #849c47;}
 #header {border-bottom: 3px solid #849c47; padding: 10px 0;}
 #footer {border-top: 3px solid #849c47; padding: 10px 0; text-align:center;}
+.footer-social-container {text-align:center; margin:20px 0;}
+.footer-social {height:30px; width:30px; margin:0 20px;}
+
 
 /* General */
 #body {}
 .center-me {text-align:center;}
+.absolute-center-children {display: -ms-flexbox; -ms-flex-pack: center; -ms-flex-align: center; display: flex; justify-content: center; align-items: center;}
+#callout-div {width:100%; height:100%; opacity:0.8;}
+.page-link {color: #849c47;}
+.page-link:hover {color: #849c47; text-decoration: underline;}
 
 /* Column Settings */
 .six-columns {width:100%; display:inline-block; vertical-align:top;}
 
 /* Home Page CSS */
+#splash-portrait {width:100%; height:400px; background-image: url('../images/abbie_home.jpg'); background-size:cover; background-position:center center;}
 .splash-portrait {width:100%; height:auto;}
+#callout-text {color:white; display:none; text-align:center; width:75%; font-family: 'Oswald', sans-serif; font-size:2.5em;}
+#callout-paragraph {color:white; display: none; position:absolute; left:20px; bottom: 10px; font-family: 'Oswald', sans-serif;}
+#callout-credit {color:white; display: none; position:absolute; right:20px; bottom: 10px; font-family: 'Oswald', sans-serif;}
+#splash-portrait-container {width:100%; height:100%; position:relative;}
 .splash-logo {width:40%; height:auto; padding:20px;}
 .splash-text {text-align:center; padding: 20px;}
 .main-title {margin-bottom: 10px;}
@@ -34,17 +50,25 @@
 /* Contact Page CSS */
 .contact-input {display:block; width:100%; height:30px; margin-top:8px;}
 .input-container {margin:25px auto; width:75%; }
+.contact-text {text-align:center; padding: 50px 20px; font-size:2em;}
+#contact-portrait {width:100%; height:400px; background-image: url('../images/abbie_contact.jpg'); background-size:cover; background-position:center center;}
+.contact-portrait {width:100%; height:auto;}
+#contact-callout-text {color:white; display:none; text-align:center; width:50%; font-family: 'Londrina Sketch', cursive; font-size: 5em;}
+#contact-portrait-container {width:100%; height:100%;}
+
 
 /* Blog Page CSS */
-.blog-title{margin:20px 0; text-align:center; color:#849c47;}
+.blog-header {background-image: url(../images/green-header.png); background-position: center right; background-size: cover; height: 15vh;}
+.blog-title{text-align:center; color:white;}
 .all-posts{margin:0 40px;}
-.post-container{margin: 20px 0;}
+.post-container{margin-top: 20px; padding-bottom: 40px; border-bottom: 1px solid #849c47;}
 .post-title{padding:10px 0;}
 .post-date{}
 .post-content{padding:10px 0;}
 
 /* 768px and up */
 @media (min-width: 768px) {
+	#splash-portrait, #contact-portrait {height:600px;}
 	.six-columns {width:50%; display:inline-block; vertical-align:top;}
 	.portfolio-text-div {margin-top:0px;}
 

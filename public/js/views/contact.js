@@ -2,10 +2,10 @@ module.exports = function(){
 	return [
 		// m('p', 'This is the homepage.')
 		m('.six-columns', [
-			m('img.splash-portrait', {src: '/images/abbiePic2.jpg'})
+			m('img.splash-portrait', {src: '/images/abbie_contact.jpg'})
 		]),
 		m('.six-columns', [
-			m('.splash-text', 'Please leave me a quick message about how you would like to connect and I will reach out!'),
+			m('.contact-text', 'Please leave me a quick message about how you would like to connect and I will reach out!'),
 			m('form', [
 				m('.input-container', [
 					m('label', 'Name'),

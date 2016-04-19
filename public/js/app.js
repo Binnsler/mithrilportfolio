@@ -9,6 +9,7 @@ var footer = require('./views/footer.js');
 // Layout Mixin - This block generates the header, body, and footer for the app
 // depending on the page and which blocks are passed in.
 // Note that 'nav' and 'footer' are always passed for every page
+// General JS needed for every page is included in site.js
 var mixLayout = function(navTemplate, sectionTemplate, footerTemplate){
 
 		return [

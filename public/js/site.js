@@ -1,3 +1,4 @@
+// This block controls image hover state
 var splashPortrait = document.getElementById('splash-portrait-container'),
       calloutText = document.getElementById('callout-text'),
       paragraphText = document.getElementById('callout-paragraph');

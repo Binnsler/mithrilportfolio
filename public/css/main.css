@@ -56,6 +56,9 @@ a {text-decoration: none;}
 #contact-callout-text {color:white; display:none; text-align:center; width:50%; font-family: 'Londrina Sketch', cursive; font-size: 5em;}
 #contact-portrait-container {width:100%; height:100%;}
 
+/* About Page CSS */
+#about-portrait {width:100%; height:400px; background-image: url('../images/abbie_press.jpg'); background-size:cover; background-position:center center;}
+
 
 /* Blog Page CSS */
 .blog-header {background-image: url(../images/green-header.png); background-position: center right; background-size: cover; height: 15vh;}
@@ -68,7 +71,7 @@ a {text-decoration: none;}
 
 /* 768px and up */
 @media (min-width: 768px) {
-	#splash-portrait, #contact-portrait {height:600px;}
+	#splash-portrait, #contact-portrait, #about-portrait {height:600px;}
 	.six-columns {width:50%; display:inline-block; vertical-align:top;}
 	.portfolio-text-div {margin-top:0px;}
 

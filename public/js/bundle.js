@@ -1,18 +1,22 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var nav = require('./views/nav.js');
 var home = require('./views/home.js');
+var about = require('./views/about.js');
 var portfolio = require('./views/portfolio.js');
-// var contact = require('./views/contact.js');
+var contact = require('./views/contact.js');
 var footer = require('./views/footer.js');
-// var blog = require('./views/blog.js');
 
-// Layout Mixin
+
+// Layout Mixin - This block generates the header, body, and footer for the app
+// depending on the page and which blocks are passed in.
+// Note that 'nav' and 'footer' are always passed for every page
 var mixLayout = function(navTemplate, sectionTemplate, footerTemplate){
 
 		return [
 			m('header#header', navTemplate()),
 			m('section#body', sectionTemplate()),
-			m('footer#footer', footerTemplate())
+			m('footer#footer', footerTemplate()),
+			m("script[src='js/site.js']")
 		];
 
 };
@@ -28,6 +32,16 @@ Homepage.view = function(controller){
 	]
 }
 
+// About Me component
+var About = {}
+
+About.controller = function(){}
+
+About.view = function(controller){
+	return [
+		mixLayout(nav, about, footer)
+	]
+}
 
 
 // Portfolio component
@@ -42,7 +56,8 @@ Portfolio.view = function(controller){
 }
 
 
-// Blog component
+// Blog component - ***** Note that although the below code works, for this
+// particular site the blog simply redirects to an outside side
 var Blog = {}
 
 Blog.blogModel = function(){
@@ -78,105 +93,71 @@ Blog.view = function(controller){
 	]
 }
 
-// Form Component
-var Form = function(formData){
-	formData = formData || {}
-	this.name = m.prop(formData.name || "")
-	this.email = m.prop(formData.email || "")
-	this.message = m.prop(formData.message || "")
-
-}
-
-Form.email = function(formData){
-		m.request({
-			url: '//formspree.io/jamie.m.binns@gmail.com',
-			method: 'POST',
-			dataType: 'json',
-			data: {
-				name: formData.name(),
-				email: formData.email(),
-				message: formData.message()
-				// message: 'Second time around.'
-			},
-			unwrapSuccess: function(response){
-				return response.responseData;
-			},
-			unwrapError: function(response){
-				return response.error;
-			}
-		})
-}
-
 // Portfolio component
 var Contact = {}
 
-Contact.controller = function(args){
-	this.error = m.prop('')
+Contact.controller = function(){}
 
-	this.getForm = m.prop(new Form());
-
-	this.sendEmail = function(formData){
-			Form.email(formData)
-	}.bind(this);
-}
 
 Contact.view = function(controller){
 	return [
-		mixLayout(nav, function(){
-			return [
-				// m('p', 'This is the homepage.')
-				m('.six-columns', [
-					m('#contact-portrait', [
-						m('#contact-portrait-container.absolute-center-children',[
-							m('h1#contact-callout-text', 'Making media that matters.')
-						])
-					])
-				]),
-				m('.six-columns', [
-					m('.contact-text', 'If you are interested in reaching out, please send me an email at onthemarkprservice@gmail.com.'),
-					m('div.center-me', [
-						m("a.twitter-timeline[href='https://twitter.com/onthemark_pr'][data-widget-id='701794881178456064']", {config: function(el, isInit) {
-						    if (!isInit) {
-						        var script = document.createElement("script")
-						        script.id = "twitter-wjs"
-						        script.src = "https://platform.twitter.com/widgets.js"
-						        document.body.appendChild(script)
-						    }
-						}}, "Tweets by @onthemark_pr")
-					])
-				// 	m('form', [
-				// 		m('.input-container', [
-				// 			m('label', 'Name'),
-				// 			m('input.contact-input[placeholder=Name]', {keyup: m.withAttr('value', controller.getForm().name), value: controller.getForm().name()})
-				// 		]),
-				// 		m('.input-container', [
-				// 			m('label', 'Email'),
-				// 			m('input.contact-input[placeholder=Email]', {keyup: m.withAttr('value', controller.getForm().email), value: controller.getForm().email()})
-				// 		]),
-				// 		m('.input-container', [
-				// 			m('label', 'Message'),
-				// 			m('input.contact-input[placeholder=Message]', {keyup: m.withAttr('value', controller.getForm().message), value: controller.getForm().message()})
-				// 		]),
-				// 		m('.splash-buttons', [
-				// 			m("button.green-button", {onclick: controller.sendEmail(controller.getForm())}, 'Submit')
-				// 		])
-				// 	])
-				])
-
-			];
-		}, footer),
+		mixLayout(nav, contact, footer),
 	]
 }
 
 // Hook up our components to routes
 m.route(document.body, "/", {
     "/": Homepage,
+		"/about-me": About,
     "/portfolio": Portfolio,
     "/blog": Blog,
-    "/contact": Contact
+    "/contact": Contact,
 });
 
-},{"./views/footer.js":2,"./views/home.js":3,"./views/nav.js":4,"./views/portfolio.js":5}],2:[function(require,module,exports){
+},{"./views/about.js":2,"./views/contact.js":3,"./views/footer.js":4,"./views/home.js":5,"./views/nav.js":6,"./views/portfolio.js":7}],2:[function(require,module,exports){
+module.exports = function(){
+	return [
+		m('.six-columns', [
+			m('#contact-portrait', [
+				m('#splash-portrait-container.absolute-center-children',[
+					m('h1#callout-text', 'Making media that matters.')
+				])
+			])
+		]),
+		m('.six-columns', [
+			m('.splash-text', [
+				m('h3.main-title', 'ABOUT'),
+				m('p.main-text', "Abbie Marks, Owner and Founder of On The Mark PR established the company in April to solidify a voice for hemp-related cannabis companies in the support of public awareness and sustainable, local agriculture"),
+				m('p.main-text', "Working in Print, TV, Radio, and Web, Abbie has collaborated with companies and media collectives in the Colorado region including RootHouse Studio, ALOC Media, and After Midnite Media. As publicist for NoCo Hemp Expo 2016, she assists in the media marketing production of what has become the largest international hub in the U.S. for hemp-integration within the natural foods and natural products market."),
+				m('p.main-text', "Her work can be found at ", m('a[href="http://www.nocohempexpo.com/"]', {class:'page-link'}, 'NoCo Hemp Expo'), ", " , m('a[href="http://nationalhempassociation.org/"]', {class:'page-link'}, 'National Hemp Association'), ", and " , m('a[href="https://alocmedia.com/"]', {class:'page-link'}, 'ALOC Media'), " where she frequently appears as a Guest Writer."),
+			]),
+		])
+	];
+};
+
+},{}],3:[function(require,module,exports){
+module.exports = function(){
+	return [
+		m('.six-columns', [
+			m('#contact-portrait')
+		]),
+		m('.six-columns', [
+			m('.contact-text', 'If you are interested in reaching out, please send me an email at onthemarkprservice@gmail.com.'),
+			m('div.center-me', [
+				m("a.twitter-timeline[href='https://twitter.com/onthemark_pr'][data-widget-id='701794881178456064']", {config: function(el, isInit) {
+						if (!isInit) {
+								var script = document.createElement("script")
+								script.id = "twitter-wjs"
+								script.src = "https://platform.twitter.com/widgets.js"
+								document.body.appendChild(script)
+						}
+				}}, "Tweets by @onthemark_pr")
+			])
+	])
+];
+};
+
+},{}],4:[function(require,module,exports){
 module.exports = function(){
 	return [
 		m('.footer-block'), [
@@ -199,7 +180,7 @@ module.exports = function(){
 	];
 };
 
-},{}],3:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 module.exports = function(){
 	return [
 		// m('p', 'This is the homepage.')
@@ -220,9 +201,6 @@ module.exports = function(){
 				m('h3.main-title', 'CONTENT WRITING - BRAND AWARENESS - COMMUNITY OUTREACH'),
 				m('p.main-text', 'On The Mark PR is an independent contracting service specializing in Digital Media, PR marketing, Community Outreach, and Media Management regarding pivotal topics in health and wellness, art, education, and science, with a focus on industrial hemp and the sustainable industries.'),
 				m('p.main-text', "Through engaging media stories and compelling content strategies, On The Mark provides creative concepts to advance media marketing, accelerate communications efforts, and build a budding audience around campaigns that fits your needs. "),
-				m('p.main-text', "Abbie Marks, Owner and Founder of On The Mark PR established the company in April to solidify a voice for hemp-related cannabis companies in the support of public awareness and sustainable, local agriculture"),
-				m('p.main-text', "Working in Print, TV, Radio, and Web, Abbie has collaborated with companies and media collectives in the Colorado region including RootHouse Studio, ALOC Media, and After Midnite Media. As publicist for NoCo Hemp Expo 2016, she assists in the media marketing production of what has become the largest international hub in the U.S. for hemp-integration within the natural foods and natural products market."),
-				m('p.main-text', "Her work can be found at ", m('a[href="http://www.nocohempexpo.com/"]', {class:'page-link'}, 'NoCo Hemp Expo'), ", " , m('a[href="http://nationalhempassociation.org/"]', {class:'page-link'}, 'National Hemp Association'), ", and " , m('a[href="https://alocmedia.com/"]', {class:'page-link'}, 'ALOC Media'), " where she frequently appears as a Guest Writer."),
 			]),
 			m('.splash-buttons', [
 				m("a[href='/contact'].green-button", {config: m.route}, 'Contact'),
@@ -233,18 +211,18 @@ module.exports = function(){
 	];
 };
 
-},{}],4:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 module.exports = function(){
 	return [
 		m("a[href='/']", {class:'footer-nav-link', config: m.route}, "Home"),
-		m("a[href='/portfolio']", {class:'footer-nav-link', config: m.route}, "Portfolio"),
-		m("a[href='http://onthemarkprservice.blogspot.com']", {class:'footer-nav-link'}, "Blog"),
+		m("a[href='/about-me']", {class:'footer-nav-link', config: m.route}, "About Me"),
+		m("a[href='/portfolio']", {class:'footer-nav-link', config: m.route}, "Work"),
+		m("a[href='http://onthemarkprservice.blogspot.com']", {class:'footer-nav-link'}, "Blogs"),
 		m("a[href='/contact']", {class:'footer-nav-link', config: m.route}, "Let's Collaborate")
-
 	];
 };
 
-},{}],5:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 var portfolioData = require('../../json/portfolio.json');
 
 module.exports = function(){
@@ -271,7 +249,7 @@ module.exports = function(){
 	];
 };
 
-},{"../../json/portfolio.json":6}],6:[function(require,module,exports){
+},{"../../json/portfolio.json":8}],8:[function(require,module,exports){
 module.exports=module.exports = {
 	"portfolio": [
 		{

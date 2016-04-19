@@ -1,17 +1,21 @@
 var nav = require('./views/nav.js');
 var home = require('./views/home.js');
+var about = require('./views/about.js');
 var portfolio = require('./views/portfolio.js');
-// var contact = require('./views/contact.js');
+var contact = require('./views/contact.js');
 var footer = require('./views/footer.js');
-// var blog = require('./views/blog.js');
 
-// Layout Mixin
+
+// Layout Mixin - This block generates the header, body, and footer for the app
+// depending on the page and which blocks are passed in.
+// Note that 'nav' and 'footer' are always passed for every page
 var mixLayout = function(navTemplate, sectionTemplate, footerTemplate){
 
 		return [
 			m('header#header', navTemplate()),
 			m('section#body', sectionTemplate()),
-			m('footer#footer', footerTemplate())
+			m('footer#footer', footerTemplate()),
+			m("script[src='js/site.js']")
 		];
 
 };
@@ -27,6 +31,16 @@ Homepage.view = function(controller){
 	]
 }
 
+// About Me component
+var About = {}
+
+About.controller = function(){}
+
+About.view = function(controller){
+	return [
+		mixLayout(nav, about, footer)
+	]
+}
 
 
 // Portfolio component
@@ -41,7 +55,8 @@ Portfolio.view = function(controller){
 }
 
 
-// Blog component
+// Blog component - ***** Note that although the below code works, for this
+// particular site the blog simply redirects to an outside side
 var Blog = {}
 
 Blog.blogModel = function(){
@@ -77,100 +92,23 @@ Blog.view = function(controller){
 	]
 }
 
-// Form Component
-var Form = function(formData){
-	formData = formData || {}
-	this.name = m.prop(formData.name || "")
-	this.email = m.prop(formData.email || "")
-	this.message = m.prop(formData.message || "")
-
-}
-
-Form.email = function(formData){
-		m.request({
-			url: '//formspree.io/jamie.m.binns@gmail.com',
-			method: 'POST',
-			dataType: 'json',
-			data: {
-				name: formData.name(),
-				email: formData.email(),
-				message: formData.message()
-				// message: 'Second time around.'
-			},
-			unwrapSuccess: function(response){
-				return response.responseData;
-			},
-			unwrapError: function(response){
-				return response.error;
-			}
-		})
-}
-
 // Portfolio component
 var Contact = {}
 
-Contact.controller = function(args){
-	this.error = m.prop('')
+Contact.controller = function(){}
 
-	this.getForm = m.prop(new Form());
-
-	this.sendEmail = function(formData){
-			Form.email(formData)
-	}.bind(this);
-}
 
 Contact.view = function(controller){
 	return [
-		mixLayout(nav, function(){
-			return [
-				// m('p', 'This is the homepage.')
-				m('.six-columns', [
-					m('#contact-portrait', [
-						m('#contact-portrait-container.absolute-center-children',[
-							m('h1#contact-callout-text', 'Making media that matters.')
-						])
-					])
-				]),
-				m('.six-columns', [
-					m('.contact-text', 'If you are interested in reaching out, please send me an email at onthemarkprservice@gmail.com.'),
-					m('div.center-me', [
-						m("a.twitter-timeline[href='https://twitter.com/onthemark_pr'][data-widget-id='701794881178456064']", {config: function(el, isInit) {
-						    if (!isInit) {
-						        var script = document.createElement("script")
-						        script.id = "twitter-wjs"
-						        script.src = "https://platform.twitter.com/widgets.js"
-						        document.body.appendChild(script)
-						    }
-						}}, "Tweets by @onthemark_pr")
-					])
-				// 	m('form', [
-				// 		m('.input-container', [
-				// 			m('label', 'Name'),
-				// 			m('input.contact-input[placeholder=Name]', {keyup: m.withAttr('value', controller.getForm().name), value: controller.getForm().name()})
-				// 		]),
-				// 		m('.input-container', [
-				// 			m('label', 'Email'),
-				// 			m('input.contact-input[placeholder=Email]', {keyup: m.withAttr('value', controller.getForm().email), value: controller.getForm().email()})
-				// 		]),
-				// 		m('.input-container', [
-				// 			m('label', 'Message'),
-				// 			m('input.contact-input[placeholder=Message]', {keyup: m.withAttr('value', controller.getForm().message), value: controller.getForm().message()})
-				// 		]),
-				// 		m('.splash-buttons', [
-				// 			m("button.green-button", {onclick: controller.sendEmail(controller.getForm())}, 'Submit')
-				// 		])
-				// 	])
-				])
-
-			];
-		}, footer),
+		mixLayout(nav, contact, footer),
 	]
 }
 
 // Hook up our components to routes
 m.route(document.body, "/", {
     "/": Homepage,
+		"/about-me": About,
     "/portfolio": Portfolio,
     "/blog": Blog,
-    "/contact": Contact
+    "/contact": Contact,
 });

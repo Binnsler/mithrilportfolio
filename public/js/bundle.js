@@ -127,10 +127,13 @@ module.exports = function(){
 		]),
 		m('.six-columns', [
 			m('.splash-text', [
-				m('h3.main-title', 'ABOUT ME'),
-				m('p.main-text', "Abbie Marks, Owner and Founder of On The Mark PR established the company in April to solidify a voice for hemp-related cannabis companies in the support of public awareness and sustainable, local agriculture"),
-				m('p.main-text', "Working in Print, TV, Radio, and Web, Abbie has collaborated with companies and media collectives in the Colorado region including RootHouse Studio, ALOC Media, and After Midnite Media. As publicist for NoCo Hemp Expo 2016, she assists in the media marketing production of what has become the largest international hub in the U.S. for hemp-integration within the natural foods and natural products market."),
-				m('p.main-text', "Her work can be found at ", m('a[href="http://www.nocohempexpo.com/"]', {class:'page-link'}, 'NoCo Hemp Expo'), ", " , m('a[href="http://nationalhempassociation.org/"]', {class:'page-link'}, 'National Hemp Association'), ", and " , m('a[href="https://alocmedia.com/"]', {class:'page-link'}, 'ALOC Media'), " where she frequently appears as a Guest Writer."),
+				m('h3.main-title', 'OUR FOUNDER'),
+				m('p.main-text', "Working in Print, TV, Radio, and Web, Abbie Marks has collaborated with companies and media collectives in the Colorado region including RootHouse Studio, ALOC Media, and After Midnite Media."),
+				m('p.main-text', "As publicist for NoCo Hemp Expo 2016, she assists in the media marketing production of what has become the largest international hub in the U.S. for hemp-integration within the natural foods and natural products market."),
+				m('p.main-text', "Her work can be found at ", m('a[href="http://nationalhempassociation.org/"]', {class:'page-link'}, 'National Hemp Association'), ", " , m('a[href="https://alocmedia.com/"]', {class:'page-link'}, 'ALOC Media'), ", and " , m('a[href="http://www.huffingtonpost.com/"]', {class:'page-link'}, 'Huffington Post'), " where she frequently appears as a Guest Writer."),
+				m('h3.main-title', 'OUR MISSION'),
+				m('p.main-text', "On The Mark PR was founded in 2016 to solidify a voice for hemp and cannabis-related businesses in the support of public awareness and transparency. Our mission is to develop compelling, cutting-edge stories and media content that demonstrate positive social change. Committed to helping the public stay informed, On The Mark PR has expanded that focus to include issues in health and wellness, sustainability, and natural foods. "),
+				m('p.main-text', "Located in Denver, Colorado, On The Mark PR works in collaboration with our clients to help create strategies that result in higher brand awareness and ROI."),
 			]),
 		])
 	];
@@ -163,9 +166,10 @@ module.exports = function(){
 	return [
 		m('.footer-block'), [
 			m("a[href='/']", {class:'footer-nav-link', config: m.route}, "Home"),
-			m("a[href='/portfolio']", {class:'footer-nav-link', config: m.route}, "Portfolio"),
-			m("a[href='/blog']", {class:'footer-nav-link', config: m.route}, "Blog Posts"),
-			m("a[href='/contact']", {class:'footer-nav-link', config: m.route}, "Contact")
+			m("a[href='/about-me']", {class:'footer-nav-link', config: m.route}, "About Us"),
+			m("a[href='/portfolio']", {class:'footer-nav-link', config: m.route}, "Work"),
+			m("a[href='/blog']", {class:'footer-nav-link', config: m.route}, "Blogs"),
+			m("a[href='/contact']", {class:'footer-nav-link', config: m.route}, "Let's Collaborate")
 		],
 		m('.footer-social-container', [
 			m("a[target='_blank']", {href:'https://twitter.com/onthemark_pr'},
@@ -200,8 +204,8 @@ module.exports = function(){
 			]),
 			m('.splash-text', [
 				m('h3.main-title', 'CONTENT WRITING - BRAND AWARENESS - COMMUNITY OUTREACH'),
-				m('p.main-text', 'On The Mark PR is an independent contracting service specializing in Digital Media, PR marketing, Community Outreach, and Media Management regarding pivotal topics in health and wellness, art, education, and science, with a focus on industrial hemp and the sustainable industries.'),
-				m('p.main-text', "Through engaging media stories and compelling content strategies, On The Mark provides creative concepts to advance media marketing, accelerate communications efforts, and build a budding audience around campaigns that fits your needs. "),
+				m('p.main-text', 'On The Mark PR is a women-led independent writing and public relations service operating in natural foods, health & wellness, and sustainable markets.'),
+				m('p.main-text', "Through engaging media stories and compelling content strategies, On The Mark PR provides creative concepts to advance media marketing, accelerate communications efforts, and build a budding audience around campaigns that fits your needs."),
 			]),
 			m('.splash-buttons', [
 				m("a[href='/contact'].green-button", {config: m.route}, 'Contact'),
@@ -216,7 +220,7 @@ module.exports = function(){
 module.exports = function(){
 	return [
 		m("a[href='/']", {class:'footer-nav-link', config: m.route}, "Home"),
-		m("a[href='/about-me']", {class:'footer-nav-link', config: m.route}, "About Me"),
+		m("a[href='/about-me']", {class:'footer-nav-link', config: m.route}, "About Us"),
 		m("a[href='/portfolio']", {class:'footer-nav-link', config: m.route}, "Work"),
 		m("a[href='http://onthemarkprservice.blogspot.com']", {class:'footer-nav-link'}, "Blogs"),
 		m("a[href='/contact']", {class:'footer-nav-link', config: m.route}, "Let's Collaborate")
@@ -256,7 +260,7 @@ module.exports=module.exports = {
 		{
 			"title": "NoCo Hemp Expo 2016 P.R Campaign",
 			"description": "Abbie has recently taken the role as publicist for the Third Annual NoCo Hemp Expo 2016. Working in collaboration with Colorado Hemp Company and the NoCo3 Team on all Press and P.R related matters, Abbie designed the P.R timeline for this year's campaign and produced the content needed for maximum attendance and media coverage.",
-			"pic": "/images/noco_hemp_expo.png",
+			"pic": "/images/noco_hemp_expo.jpg",
 			"link":"http://nocohempexpo.com"
 		},
 		{

@@ -16,8 +16,8 @@ module.exports = function(){
 			]),
 			m('.splash-text', [
 				m('h3.main-title', 'CONTENT WRITING - BRAND AWARENESS - COMMUNITY OUTREACH'),
-				m('p.main-text', 'On The Mark PR is an independent contracting service specializing in Digital Media, PR marketing, Community Outreach, and Media Management regarding pivotal topics in health and wellness, art, education, and science, with a focus on industrial hemp and the sustainable industries.'),
-				m('p.main-text', "Through engaging media stories and compelling content strategies, On The Mark provides creative concepts to advance media marketing, accelerate communications efforts, and build a budding audience around campaigns that fits your needs. "),
+				m('p.main-text', 'On The Mark PR is a women-led independent writing and public relations service operating in natural foods, health & wellness, and sustainable markets.'),
+				m('p.main-text', "Through engaging media stories and compelling content strategies, On The Mark PR provides creative concepts to advance media marketing, accelerate communications efforts, and build a budding audience around campaigns that fits your needs."),
 			]),
 			m('.splash-buttons', [
 				m("a[href='/contact'].green-button", {config: m.route}, 'Contact'),
